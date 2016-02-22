@@ -6,8 +6,8 @@ import org.junit.Test;
 import junit.framework.*;
 
 public class ListTest {
-    static CList<Integer> empty;
-    static CList<Integer> list;
+    CList<Integer> empty;
+    CList<Integer> list;
 
     @Before
     public void init() {
@@ -26,226 +26,226 @@ public class ListTest {
 
     @Test
     public void testEmptyList() {
-        assert this.empty.length() == 0;
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == null;
-        assert this.empty.remove() == null;
+        assert empty.length() == 0;
+        assert empty.currPos() == 0;
+        assert empty.getValue() == null;
+        assert empty.remove() == null;
     }
 
     @Test
     public void testClearList() {
         assert list.length() == 10;
-        this.list.clear();
-        assert this.list.length() == 0;
-        assert this.list.currPos() == 0;
+        list.clear();
+        assert list.length() == 0;
+        assert list.currPos() == 0;
     }
 
     @Test
     public void testClearEmptyList() {
         assert empty.length() == 0;
-        this.empty.clear();
-        assert this.empty.length() == 0;
-        assert this.empty.currPos() == 0;
+        empty.clear();
+        assert empty.length() == 0;
+        assert empty.currPos() == 0;
     }
 
     @Test
     public void testListInsert() {
-        assert this.list.currPos() == 0;
-        assert this.list.insert(11);
-        assert this.list.getValue() == 11;
-        assert this.list.length() == 11;
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
+        assert list.insert(11);
+        assert list.getValue() == 11;
+        assert list.length() == 11;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListInsert() {
-        assert this.empty.currPos() == 0;
-        assert this.empty.insert(1);
-        assert this.empty.length() == 1;
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == 1;
+        assert empty.currPos() == 0;
+        assert empty.insert(1);
+        assert empty.length() == 1;
+        assert empty.currPos() == 0;
+        assert empty.getValue() == 1;
     }
     
     @Test
     public void testListAppend() {
-        assert this.list.currPos() == 0;
-        assert this.list.insert(11);
-        assert this.list.getValue() == 0;
-        assert this.list.length() == 11;
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
+        assert list.insert(11);
+        assert list.getValue() == 0;
+        assert list.length() == 11;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListAppend() {
-        assert this.list.currPos() == 0;
-        assert this.list.append(1);
-        assert this.empty.length() == 1;
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == 1;
+        assert list.currPos() == 0;
+        assert list.append(1);
+        assert empty.length() == 1;
+        assert empty.currPos() == 0;
+        assert empty.getValue() == 1;
     }
     
     @Test
     public void testListRemove() {
-        assert this.list.currPos() == 0;
-        assert this.list.remove() == 0;
-        assert this.list.getValue() == 1;
-        assert this.list.length() == 9;
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
+        assert list.remove() == 0;
+        assert list.getValue() == 1;
+        assert list.length() == 9;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListRemove() {
-        assert this.list.remove() == null;
-        assert this.empty.length() == 0;
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == null;
+        assert list.remove() == null;
+        assert empty.length() == 0;
+        assert empty.currPos() == 0;
+        assert empty.getValue() == null;
     }
     
     @Test
     public void testListMoveToStart() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        this.list.moveToStart();
-        assert this.list.getValue() == 0;
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        list.moveToStart();
+        assert list.getValue() == 0;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListMoveToStart() {
-        assert this.list.currPos() == 0;
-        this.list.moveToStart();
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == null;
+        assert list.currPos() == 0;
+        list.moveToStart();
+        assert empty.currPos() == 0;
+        assert empty.getValue() == null;
     }
 
     @Test
     public void testListMoveToEnd() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        assert this.list.getValue() == 9;
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        assert list.getValue() == 9;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListMoveToEnd() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == null;
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        assert empty.currPos() == 0;
+        assert empty.getValue() == null;
     }
 
     @Test
     public void testListNext() {
-        assert this.list.currPos() == 0;
-        this.list.next();
-        assert this.list.currPos() == 1;
+        assert list.currPos() == 0;
+        list.next();
+        assert list.currPos() == 1;
         for (int i = 0; i < 9; i++) {
-            this.list.next();
+            list.next();
         }
-        assert this.list.currPos() == 9;
+        assert list.currPos() == 9;
     }
     
     @Test
     public void testEmptyListNext() {
-        assert this.list.currPos() == 0;
-        this.list.next();
-        assert this.empty.currPos() == 0;
-        assert this.empty.getValue() == null;
+        assert list.currPos() == 0;
+        list.next();
+        assert empty.currPos() == 0;
+        assert empty.getValue() == null;
     }
     @Test
     public void testListPrev() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        assert this.list.currPos() == 9;
-        this.list.prev();
-        assert this.list.currPos() == 8;
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        assert list.currPos() == 9;
+        list.prev();
+        assert list.currPos() == 8;
         for (int i = 0; i < 9; i++) {
-            this.list.prev();
+            list.prev();
         }
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListPrev() {
-        assert this.list.currPos() == 0;
-        this.list.prev();
-        assert this.empty.currPos() == 0;
+        assert list.currPos() == 0;
+        list.prev();
+        assert empty.currPos() == 0;
     }
 
     @Test
     public void testListForward() {
-        assert this.list.currPos() == 0;
-        this.list.forward();
-        assert this.list.currPos() == 1;
+        assert list.currPos() == 0;
+        list.forward();
+        assert list.currPos() == 1;
         for (int i = 0; i < 9; i++) {
-            this.list.forward();
+            list.forward();
         }
-        assert this.list.currPos() == 0;
+        assert list.currPos() == 0;
     }
     
     @Test
     public void testEmptyListForward() {
-        assert this.list.currPos() == 0;
-        this.list.forward();
-        assert this.empty.currPos() == 0;
+        assert list.currPos() == 0;
+        list.forward();
+        assert empty.currPos() == 0;
     }
     @Test
     public void testListBack() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        assert this.list.currPos() == 9;
-        this.list.back();
-        assert this.list.currPos() == 8;
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        assert list.currPos() == 9;
+        list.back();
+        assert list.currPos() == 8;
         for (int i = 0; i < 9; i++) {
-            this.list.back();
+            list.back();
         }
-        assert this.list.currPos() == 9;
+        assert list.currPos() == 9;
     }
     
     @Test
     public void testEmptyListBack() {
-        assert this.empty.currPos() == 0;
-        this.empty.back();
-        assert this.empty.currPos() == 0;
+        assert empty.currPos() == 0;
+        empty.back();
+        assert empty.currPos() == 0;
     }
     
     @Test
     public void testListMoveToPos() {
-        assert this.list.currPos() == 0;
-        this.list.moveToPos(5);
-        assert this.list.currPos() == 5;
-        assert this.list.getValue() == 5;
+        assert list.currPos() == 0;
+        list.moveToPos(5);
+        assert list.currPos() == 5;
+        assert list.getValue() == 5;
     }
     
     @Test
     public void testEmptyListMoveToPos() {
-        assert this.empty.moveToPos(0);
-        assert !this.empty.moveToPos(5);
+        assert empty.moveToPos(0);
+        assert !empty.moveToPos(5);
     }
     
     @Test
     public void testListIsAtEnd() {
-        assert this.list.currPos() == 0;
-        this.list.moveToEnd();
-        assert this.list.isAtEnd();
+        assert list.currPos() == 0;
+        list.moveToEnd();
+        assert list.isAtEnd();
     }
     
     @Test
     public void testEmptyListIsAtEnd() {
-        assert this.empty.currPos() == 0;
-        assert this.list.isAtEnd();
+        assert empty.currPos() == 0;
+        assert list.isAtEnd();
     }
       
     @Test
     public void testListToString() {
-        assert this.list.toString() == "[ 0 1 2 3 4 5 6 7 8 9 ]";
-        this.list.remove();
-        assert this.list.toString() == "[ 1 2 3 4 5 6 7 8 9 ]";
+        assert list.toString() == "[ 0 1 2 3 4 5 6 7 8 9 ]";
+        list.remove();
+        assert list.toString() == "[ 1 2 3 4 5 6 7 8 9 ]";
     }
     
     @Test
     public void testEmptyListToString() {
-        assert this.empty.toString() == "[ ]";
+        assert empty.toString() == "[ ]";
     }
     
 }
