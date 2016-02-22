@@ -10,7 +10,7 @@ public class ListTest {
     static CList<Integer> list;
 
     @Before
-    public static void init() {
+    public void init() {
         list = new CList<Integer>();
         for (int i = 0; i < 10; ++i) {
             list.append(i);
