@@ -56,7 +56,7 @@ public class ListTest {
     public void testListInsertStart() {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         Assert.assertTrue(list.insert(11));
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 11);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 11);
         Assert.assertEquals(list.length(), 11);
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
     }
@@ -66,7 +66,7 @@ public class ListTest {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         Assert.assertTrue(empty.moveToPos(5));
         Assert.assertTrue(list.insert(11));
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 11);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 11);
         Assert.assertEquals(list.length(), 11);
         Assert.assertEquals("Cursor at wrong position", list.currPos(), 5);
     }
@@ -84,7 +84,7 @@ public class ListTest {
     public void testListAppend() {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         Assert.assertTrue(list.insert(11));
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 0);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 0);
         Assert.assertEquals(list.length(), 11);
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
     }
@@ -102,7 +102,7 @@ public class ListTest {
     public void testListRemove() {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         Assert.assertEquals(list.remove(), 0);
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 1);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 1);
         Assert.assertEquals(list.length(), 9);
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
     }
@@ -120,7 +120,7 @@ public class ListTest {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         list.moveToEnd();
         list.moveToStart();
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 0);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 0);
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
     }
     
@@ -136,7 +136,7 @@ public class ListTest {
     public void testListMoveToEnd() {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         list.moveToEnd();
-        Assert.assertEquals("Incorrect value at cursor", list.getValue(), 9);
+        Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 9);
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
     }
     
@@ -228,7 +228,7 @@ public class ListTest {
         Assert.assertEquals("Not at expected position 0", list.currPos(), 0);
         list.moveToPos(5);
         Assert.assertEquals("Cursor at wrong position", list.currPos(), 5);
-        Assert.assertEquals("Incorrect value at cursor: expected 5 got" + list.getValue, list.getValue(), 5);
+        Assert.assertEquals("Incorrect value at cursor: expected 5 got" + list.getValue(), list.getValue(), (Integer) 5);
     }
     
     @Test
