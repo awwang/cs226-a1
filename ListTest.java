@@ -20,8 +20,12 @@ public class ListTest {
 
     @Test
     public void testString() {
-        System.out.println("\nstarting tests, using toString to test init");
         Assert.assertEquals("[ 0 1 2 3 4 5 6 7 8 9 ]", list.toString());
+    }
+
+    @Test
+    public void testEmptyListString() {
+        assert empty.toString() == "[ ]";
     }
 
     @Test
@@ -234,18 +238,5 @@ public class ListTest {
     public void testEmptyListIsAtEnd() {
         assert empty.currPos() == 0;
         assert list.isAtEnd();
-    }
-      
-    @Test
-    public void testListToString() {
-        assert list.toString() == "[ 0 1 2 3 4 5 6 7 8 9 ]";
-        list.remove();
-        assert list.toString() == "[ 1 2 3 4 5 6 7 8 9 ]";
-    }
-    
-    @Test
-    public void testEmptyListToString() {
-        assert empty.toString() == "[ ]";
-    }
-    
+    }    
 }
