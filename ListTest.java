@@ -101,8 +101,8 @@ public class ListTest {
     
     @Test
     public void testEmptyListAppend() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
-        Assert.assertTrue("Append failure", list.append(1));
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
+        Assert.assertTrue("Append failure", empty.append(1));
         Assert.assertEquals("Expected list size 1, got " + empty.length(), empty.length(), 1);
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
         Assert.assertEquals("Expected value 1, got " + empty.getValue(), empty.getValue(), (Integer) 1);
@@ -131,7 +131,7 @@ public class ListTest {
     public void testListRemoveEnd() {
         Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
         Assert.assertTrue("Move to position failure", list.moveToPos(9));
-        Assert.assertEquals("Did not remove 9 from list", list.remove(), (Integer) 0);
+        Assert.assertEquals("Did not remove 9 from list", list.remove(), (Integer) 9);
         Assert.assertEquals("Incorrect value at cursor", list.getValue(), (Integer) 0);
         Assert.assertEquals("Expected list size 9, got " + list.length(), list.length(), 9);
         Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
@@ -156,7 +156,7 @@ public class ListTest {
     
     @Test
     public void testEmptyListMoveToStart() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
         list.moveToStart();
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
         Assert.assertNull("List is not empty: got size " + empty.length(), empty.getValue());
@@ -172,7 +172,7 @@ public class ListTest {
     
     @Test
     public void testEmptyListMoveToEnd() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
         list.moveToEnd();
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
         Assert.assertNull("List is not empty: got size " + empty.length(), empty.getValue());
@@ -191,8 +191,8 @@ public class ListTest {
     
     @Test
     public void testEmptyListNext() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
-        list.next();
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
+        empty.next();
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
         Assert.assertNull("List is not empty: got size " + empty.length(), empty.getValue());
     }
@@ -211,8 +211,8 @@ public class ListTest {
     
     @Test
     public void testEmptyListPrev() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
-        list.prev();
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
+        empty.prev();
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
     }
 
@@ -229,8 +229,8 @@ public class ListTest {
     
     @Test
     public void testEmptyListForward() {
-        Assert.assertEquals("Not at expected position 0: got position " + list.currPos(), list.currPos(), 0);
-        list.forward();
+        Assert.assertEquals("Not at expected position 0: got position " + empty.currPos(), empty.currPos(), 0);
+        empty.forward();
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
     }
     @Test
@@ -277,6 +277,6 @@ public class ListTest {
     @Test
     public void testEmptyListIsAtEnd() {
         Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), empty.currPos(), 0);
-        Assert.assertTrue(list.isAtEnd());
+        Assert.assertTrue(empty.isAtEnd());
     }    
 }
