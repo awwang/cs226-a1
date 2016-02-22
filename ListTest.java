@@ -1,3 +1,10 @@
+/**
+ * @author Allan Wang
+ * awang53
+ * 600.226.01
+ * Assignment 1 - a1
+ */
+
 import java.io.PrintStream;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,7 +38,7 @@ public class ListTest {
     @Test
     public void testEmptyList() {
         Assert.assertEquals("List is not empty: got size " + empty.length(), 0, empty.length());
-        Assert.assertEquals("Not at expected position 0 in empty list: got position " + 0, empty.currPos(), empty.currPos());
+        Assert.assertEquals("Not at expected position 0 in empty list: got position " + empty.currPos(), 0, empty.currPos());
         Assert.assertNull("List is not empty: got size " + empty.length(), empty.getValue());
         Assert.assertNull("Remove crashes on empty list",empty.remove());
     }
