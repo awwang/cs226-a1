@@ -6,7 +6,7 @@ import org.junit.Test;
 import junit.framework.*;
 
 public class ListTest {
-    CList<Integer> empty;
+    static CList<Integer> empty;
     static CList<Integer> list;
 
     @Before
@@ -87,7 +87,7 @@ public class ListTest {
     @Test
     public void testListRemove() {
         assert this.list.currPos() == 0;
-        assert this.list.remove();
+        assert this.list.remove() == 0;
         assert this.list.getValue() == 1;
         assert this.list.length() == 9;
         assert this.list.currPos() == 0;
@@ -95,7 +95,7 @@ public class ListTest {
     
     @Test
     public void testEmptyListRemove() {
-        assert this.list.remove(1) == null;
+        assert this.list.remove() == null;
         assert this.empty.length() == 0;
         assert this.empty.currPos() == 0;
         assert this.empty.getValue() == null;
@@ -113,7 +113,7 @@ public class ListTest {
     @Test
     public void testEmptyListMoveToStart() {
         assert this.list.currPos() == 0;
-        assert this.list.moveToStart();
+        this.list.moveToStart();
         assert this.empty.currPos() == 0;
         assert this.empty.getValue() == null;
     }
