@@ -11,11 +11,11 @@ public class ListTest {
 
     @Before
     public static void init() {
-        this.list = new CList();
+        list = new CList();
         for (int i = 0; i < 10; ++i) {
-            this.list.append(i);
+            list.append(i);
         }
-        this.empty = new CList();
+        empty = new CList();
     }
 
     @Test
